@@ -9,12 +9,13 @@
 import Foundation
 
 public class RSSFeedInfo: NSObject, NSCoding {
-    var title:String?
-    var link:String?
-    var summary:String?
-    var url:NSURL?
+    public var title:String?
+    public var link:String?
+    public var summary:String?
+    public var url:NSURL?
     
-    override init() {
+    public override init() {
+        super.init()
     }
     
     required public init(coder aDecoder: NSCoder) {

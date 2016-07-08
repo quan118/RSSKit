@@ -9,23 +9,23 @@
 import Foundation
 
 public class RSSFeedItem: NSObject {
-    var identifier:String?
-    var title:String?
-    var link:String?
-    var date:NSDate?        // Date the item was published
-    var updated:NSDate?     // Date the item was updated if available
-    var summary:String?
-    var content:String?
-    var author:String?
+    public var identifier:String?
+    public var title:String?
+    public var link:String?
+    public var date:NSDate?        // Date the item was published
+    public var updated:NSDate?     // Date the item was updated if available
+    public var summary:String?
+    public var content:String?
+    public var author:String?
     
     // Enclosures: Holds 1 ore more item enclosures (i.e. podcasts, mp3. pdf, etc)
     // - Array of dictionaries with the following keys:
     //      url: where the enclosure is located (String)
     //      length: how big it is in bytes (Int)
     //      type: what its type is, a standard MIME type (String)
-    var enclosures:[AnyObject]?
+    public var enclosures:[AnyObject]?
     
-    override init() {
+    public override init() {
         super.init()
     }
     
