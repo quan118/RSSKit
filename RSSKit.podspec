@@ -5,10 +5,10 @@ Pod::Spec.new do |s|
   s.summary = "A RSS/Atom Parser in Swift"
   s.homepage = "https://github.com/quan118/RSSKit"
   s.authors = "Quan Nguyen"
-  s.source = { :git => "https://github.com/quan118/RSSKit.git"}
+  s.source = { :git => "https://github.com/quan118/RSSKit.git", :tag => "#{s.version}"}
 
   s.ios.deployment_target = '8.4'
   s.tvos.deployment_target = '9.0'
 
-  s.source_files = "Source/*.swift"
+  s.source_files = "Sources/*.swift"
 end
