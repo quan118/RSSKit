@@ -8,18 +8,18 @@
 
 import Foundation
 
-enum ConnectionType {
+public enum ConnectionType {
     case Asynchronously
     case Synchronously
 }
 
-enum ParseType {
+public enum ParseType {
     case Full
     case ItemsOnly
     case InfoOnly
 }
 
-enum FeedType {
+public enum FeedType {
     case Unknown
     case RSS
     case RSS1
@@ -27,7 +27,7 @@ enum FeedType {
 }
 
 //
-@objc public protocol KFeedParserDelegate {
+@objc public protocol RSSFeedParserDelegate {
     optional func feedParserDidStart(parser:RSSFeedParser)
     optional func feedParser(parser:RSSFeedParser, didParseFeedInfo info:RSSFeedInfo)
     optional func feedParser(parser:RSSFeedParser, didParseFeedItem item:RSSFeedItem)
@@ -37,16 +37,16 @@ enum FeedType {
 
 public class RSSFeedParser: NSObject {
     // Required
-    weak var delegate: KFeedParserDelegate?
+    public weak var delegate: RSSFeedParserDelegate?
     
     // Connection
     private var urlConnection : NSURLConnection?
     private var asyncData : NSMutableData?
     private var asyncTextEncodingName:String?
-    var connectionType: ConnectionType
+    public var connectionType: ConnectionType
     
     // Parsing
-    var feedParseType: ParseType
+    public var feedParseType: ParseType
     private var feedParser : NSXMLParser?
     private var feedType: FeedType = .Unknown
     
