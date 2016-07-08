@@ -103,7 +103,7 @@ public class RSSFeedParser: NSObject {
         super.init()
     }
     
-    convenience init(feedURL : NSURL) {
+    public convenience init(feedURL : NSURL) {
         self.init()
         
         url = feedURL
@@ -116,14 +116,14 @@ public class RSSFeedParser: NSObject {
         request = req
     }
     
-    convenience init(feedRequest:NSMutableURLRequest) {
+    public convenience init(feedRequest:NSMutableURLRequest) {
         self.init()
         url = feedRequest.URL
         request = feedRequest
     }
     
     //MARK: - Parsing
-    func reset() {
+    public func reset() {
         asyncData = nil
         asyncTextEncodingName = nil
         urlConnection = nil
@@ -138,7 +138,7 @@ public class RSSFeedParser: NSObject {
         hasEncounteredItems = false
     }
     
-    func parse() -> Bool {
+    public func parse() -> Bool {
         // Reset
         reset()
         
@@ -199,7 +199,7 @@ public class RSSFeedParser: NSObject {
         parsingFinished()
     }
     
-    func stopParsing() {
+    public func stopParsing() {
         // Only if we're parsing
         guard parsing == true && parsingComplete == false else {
             return

@@ -9,7 +9,7 @@
 import Foundation
 
 extension String {
-    func stringByConvertingHTMLToPlainText() -> String {
+    public func stringByConvertingHTMLToPlainText() -> String {
         // Character sets
         let stopCharacters = NSCharacterSet(charactersInString: String(format: "< \t\n\r%C%C%C%C", 0x0085, 0x000C, 0x2028, 0x2029))
         let newLineAndWhitespaceCharacters = stopCharacters
@@ -93,11 +93,11 @@ extension String {
         return retString
     }
     
-    func stringByDecodingHTMLEntities() -> String {
+    public func stringByDecodingHTMLEntities() -> String {
         return self.gtm_stringByUnescapingFromHTML()
     }
     
-    func stringByEncodingHTMLEntities() -> String {
+    public func stringByEncodingHTMLEntities() -> String {
         return self.gtm_stringByEscapingForAsciiHTML()
     }
 }
