@@ -27,7 +27,7 @@ extension String {
             
             // Scan up to the start of a tag or whitespace
             if scanner.scanUpToCharactersFromSet(stopCharacters, intoString: &str) {
-                result += String(str)
+                result += String(str!)
                 str = nil // reset
             }
             
