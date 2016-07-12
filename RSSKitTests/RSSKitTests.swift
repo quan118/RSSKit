@@ -99,9 +99,17 @@ class RSSKitTests: XCTestCase {
         XCTAssertEqual("abcا1ب<تdef&".gtm_stringByEscapingForAsciiHTML(), "abc&#1575;1&#1576;&lt;&#1578;def&amp;")
     }
     
+    func testStringByConvertingHTMLToPlainText() {
+        XCTAssertEqual("<br />\n<p>a</p>".stringByConvertingHTMLToPlainText(), "a ")
+    }
+    
     func testStringByUnescapingFromHTML() {
         // From '&lt;span&gt;blah&lt;span&gt;' to '<span>blah<span>'
         XCTAssertEqual("&lt;span&gt;blah&lt;span&gt;".gtm_stringByUnescapingFromHTML(), "<span>blah<span>")
+    }
+    
+    func testStringByDecodingHTMLEntities() {
+        XCTAssertEqual("a ".stringByDecodingHTMLEntities(), "a ")
     }
     
     func testDateFromRFC822String() {
