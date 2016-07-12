@@ -1,6 +1,6 @@
 //
 //  GTMString+HTML.swift
-//  KFeedParser
+//
 //
 //  Created by Quan Nguyen on 6/22/16.
 //  Copyright © 2016 Niteco, Inc. All rights reserved.
@@ -411,7 +411,7 @@ extension String {
         var subrange = self.rangeOfString("&", options: NSStringCompareOptions.BackwardsSearch, range: range, locale: nil)
         
         // if no ampersands, we've got a quick way out
-        if subrange?.count == 0 {
+        if subrange == nil || subrange?.count == 0 {
             return self
         }
         var finalString = String(self)

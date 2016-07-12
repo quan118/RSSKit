@@ -1,6 +1,5 @@
 //
 //  NSDate+InternetDateTime.swift
-//  KFeedParser
 //
 //  Created by Quan Nguyen on 6/27/16.
 //  Copyright © 2016 Niteco, Inc. All rights reserved.
