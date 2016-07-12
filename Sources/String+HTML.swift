@@ -1,6 +1,5 @@
 //
 //  String+HTML.swift
-//  KFeedParser
 //
 //  Created by Quan Nguyen on 7/4/16.
 //  Copyright © 2016 Niteco, Inc. All rights reserved.
@@ -12,7 +11,7 @@ extension String {
     public func stringByConvertingHTMLToPlainText() -> String {
         // Character sets
         let stopCharacters = NSCharacterSet(charactersInString: String(format: "< \t\n\r%C%C%C%C", 0x0085, 0x000C, 0x2028, 0x2029))
-        let newLineAndWhitespaceCharacters = stopCharacters
+        let newLineAndWhitespaceCharacters = NSCharacterSet(charactersInString: String(format: " \t\n\r%C%C%C%C", 0x0085, 0x000C, 0x2028, 0x2029))
         let tagNameCharacters = NSCharacterSet(charactersInString: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
         
         // Scan and find all tags
@@ -88,7 +87,7 @@ extension String {
         // Cleanup
         
         // Decode HTML entities and return
-        let retString = result
+        let retString = result.stringByDecodingHTMLEntities()
         
         return retString
     }
