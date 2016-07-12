@@ -418,10 +418,11 @@ extension String {
         
         repeat {
             var semiColonRange:Range<String.Index>? = subrange!.startIndex..<range.endIndex
-            semiColonRange = self.rangeOfString(";", options: NSStringCompareOptions.CaseInsensitiveSearch, range: semiColonRange, locale: nil)!
+            semiColonRange = self.rangeOfString(";", options: NSStringCompareOptions.CaseInsensitiveSearch, range: semiColonRange, locale: nil)
             range = self.startIndex..<subrange!.startIndex
             // if we don't find a semicolon in the range, we don't have a sequence
             if semiColonRange == nil {
+                subrange = self.rangeOfString("&", options: NSStringCompareOptions.BackwardsSearch, range: range, locale: nil)
                 continue
             }
             let escapeRange = subrange!.startIndex...semiColonRange!.startIndex

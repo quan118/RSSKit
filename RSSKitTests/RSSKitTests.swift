@@ -110,6 +110,7 @@ class RSSKitTests: XCTestCase {
     
     func testStringByDecodingHTMLEntities() {
         XCTAssertEqual("a ".stringByDecodingHTMLEntities(), "a ")
+        XCTAssertEqual("Carl Friedrich Abel & Johann Adolf Hasse: Composed to the Soul".stringByDecodingHTMLEntities(), "Carl Friedrich Abel & Johann Adolf Hasse: Composed to the Soul")
     }
     
     func testDateFromRFC822String() {
