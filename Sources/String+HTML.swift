@@ -15,7 +15,7 @@ extension String {
         let tagNameCharacters = NSCharacterSet(charactersInString: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
         
         // Scan and find all tags
-        var result = ""
+        var result = NSMutableString(capacity: self.utf16.count)
         let scanner = NSScanner(string: self)
         scanner.charactersToBeSkipped = nil
         scanner.caseSensitive = true
@@ -26,7 +26,7 @@ extension String {
             
             // Scan up to the start of a tag or whitespace
             if scanner.scanUpToCharactersFromSet(stopCharacters, intoString: &str) {
-                result += String(str!)
+                result.appendString(str! as String)
                 str = nil // reset
             }
             
@@ -65,8 +65,8 @@ extension String {
                         }
                         
                         // Replace tag with string unless it was an inline
-                        if replaceTagWithSpace && result.characters.count > 0 && !scanner.atEnd {
-                            result += " "
+                        if replaceTagWithSpace && result.length > 0 && !scanner.atEnd {
+                            result.appendString(" ")
                         }
                     }
                     
@@ -77,8 +77,8 @@ extension String {
             } else {
                 // Stopped at whitespace - replace all whitespace and newlines with a space
                 if scanner.scanCharactersFromSet(newLineAndWhitespaceCharacters, intoString: nil) {
-                    if result.characters.count > 0 && !scanner.atEnd {
-                        result += " "
+                    if result.length > 0 && !scanner.atEnd {
+                        result.appendString(" ")
                     }
                 }
             }
@@ -87,7 +87,7 @@ extension String {
         // Cleanup
         
         // Decode HTML entities and return
-        let retString = result.stringByDecodingHTMLEntities()
+        let retString = (result as String).stringByDecodingHTMLEntities()
         
         return retString
     }

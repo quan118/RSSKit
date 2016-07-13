@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14636A051D35F75A000E2D03 /* output01.txt in Resources */ = {isa = PBXBuildFile; fileRef = 14636A031D35F5F3000E2D03 /* output01.txt */; };
+		14636A061D35F75C000E2D03 /* input01.txt in Resources */ = {isa = PBXBuildFile; fileRef = 14636A011D35F43A000E2D03 /* input01.txt */; };
 		14C980BD1D2E585A0001CB1D /* RSSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 14C980BC1D2E585A0001CB1D /* RSSKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		14C980BE1D2E586D0001CB1D /* RSSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 14C980BC1D2E585A0001CB1D /* RSSKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		14C980C11D2E5CA90001CB1D /* RSSFeedInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C980C01D2E5CA90001CB1D /* RSSFeedInfo.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14636A011D35F43A000E2D03 /* input01.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input01.txt; sourceTree = "<group>"; };
+		14636A031D35F5F3000E2D03 /* output01.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = output01.txt; sourceTree = "<group>"; };
 		14C9809F1D2E550B0001CB1D /* RSSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C980AC1D2E55500001CB1D /* RSSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C980BA1D2E56F80001CB1D /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
@@ -84,9 +88,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14636A001D35F43A000E2D03 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				14636A031D35F5F3000E2D03 /* output01.txt */,
+				14636A011D35F43A000E2D03 /* input01.txt */,
+			);
+			path = TestData;
+			sourceTree = "<group>";
+		};
 		14C980841D2E3A2F0001CB1D = {
 			isa = PBXGroup;
 			children = (
+				14636A001D35F43A000E2D03 /* TestData */,
 				14C980B51D2E56D70001CB1D /* Sources */,
 				14C980DA1D2E60830001CB1D /* RSSKitTests */,
 				14C980921D2E54D90001CB1D /* Products */,
@@ -263,6 +277,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14636A061D35F75C000E2D03 /* input01.txt in Resources */,
+				14636A051D35F75A000E2D03 /* output01.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

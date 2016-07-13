@@ -103,6 +103,26 @@ class RSSKitTests: XCTestCase {
         XCTAssertEqual("<br />\n<p>a</p>".stringByConvertingHTMLToPlainText(), "a ")
     }
     
+    func testStringByConvertingHTMLToPlainTextPerformance() {
+        let bundle = NSBundle(forClass: self.dynamicType)
+        let input01Path = bundle.pathForResource("input01", ofType: "txt")
+//        let output01Path = bundle.pathForResource("output01", ofType: "txt")
+        
+        if let input01Path = input01Path {
+            do {
+                let input = try String(contentsOfFile: input01Path, encoding: NSUTF8StringEncoding)
+//                let output = try String(contentsOfFile: output01Path, encoding: NSUTF8StringEncoding)
+                
+                self.measureBlock{
+                    input.stringByConvertingHTMLToPlainText()
+                }
+                
+            } catch {
+                print((error as NSError).localizedDescription)
+            }
+        }
+    }
+    
     func testStringByUnescapingFromHTML() {
         // From '&lt;span&gt;blah&lt;span&gt;' to '<span>blah<span>'
         XCTAssertEqual("&lt;span&gt;blah&lt;span&gt;".gtm_stringByUnescapingFromHTML(), "<span>blah<span>")
