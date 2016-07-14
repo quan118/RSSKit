@@ -1,0 +1,6 @@
+language: objective-c
+osx_image: xcode7.3
+script:
+  - xctool -workspace RSSKit.xcworkspace -scheme RSSKit-tvOS -sdk appletvsimulator ONLY_ACTIVE_ARCH=NO
+  - xctool -workspace RSSKit.xcworkspace -scheme RSSKit-iOS -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - xctool test -workspace RSSKit.xcworkspace -scheme RSSKitTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
