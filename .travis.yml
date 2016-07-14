@@ -1,0 +1,5 @@
+language: objective-c
+osx_image: xcode7.3
+xcode_workspace: RSSKit.xcworkspace
+xcode_scheme: RSSKitTests
+xcode_sdk: iphonesimulator8.4
