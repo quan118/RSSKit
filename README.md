@@ -32,6 +32,70 @@ You should open the `{Project}.xcworkspace` instead of the `{Project}.xcodeproj`
 
 For more information about how to use CocoaPods, I suggest [this tutorial](http://www.raywenderlich.com/64546/introduction-to-cocoapods-2).
 
+## Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager for Cocoa application. To install the carthage tool, you can use [Homebrew](http://brew.sh).
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate RSSKit into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+``` ogdl
+github "quan118/RSSKit" ~> 2.4
+```
+
+Then, run the following command to build the RSSKit framework:
+
+```bash
+$ carthage update
+```
+
+At last, you need to set up your Xcode project manually to add the RSSKit framework.
+
+On your application targets' "General" settings tab, in the "Linked Frameworks and Libraries" section, drag and drop each framework you want to use from Carthage/Build folder on disk.
+
+On your application targets' "Build Phases" settings tab, click the "+" icon and choose "New Run Script Phase". Create a Run Script with the following content:
+
+```
+/usr/local/bin/carthage copy-frameworks
+```
+
+and add the paths to the frameworks you want to use under "Input Files":
+
+```
+$(SRCROOT)/Carthage/Build/iOS/RSSKit.framework
+```
+
+For more information about how to use Carthage, please see its [project page](https://github.com/Carthage/Carthage).
+
+## Manually
+
+It is not recommended to install the framework manually, but if you prefer not to use either of the aforementioned dependency managers, you can integrate RSSKit into your project manually. A regular way to use RSSKit in your project would be using Embedded Framework.
+
+- Open up Terminal, `cd` into your top-level project directory, and run the folowing command "if" your project is not initialized as a git repository:
+
+```bash
+$ git init
+```
+
+- Add RSSKit as a [submodule](http://git-scm.com/docs/git-submodule). In your favorite terminal, `cd` into your top-level project directory, and entering the following command:
+
+``` bash
+$ git submodule add https://github.com/quan118/RSSKit.git
+```
+
+- Open the `RSSKit` folder, and drag `RSSKit.xcodeproj` into the Project Navigator of your app project, under your app project.
+
+    > It should appear nested underneath your application's blue project icon. Whether it is above or below all the other Xcode groups does not matter.
+
+- In Xcode, navigate to the target configuration window by clicking on the blue project icon, and selecting the application target under the "Targets" heading in the sidebar.
+- In the tab bar at the top of that window, open the "Build Phases" panel.
+- Expand the "Target Dependencies" group, and add `RSSKit.framework`.
+- Click on the `+` button at the top left of "Build Phases" panel and select "New Copy Files Phase". Rename this new phase to "Copy Frameworks", set the "Destination" to "Frameworks", and add `RSSKit.framework` of the platform you need.
+
 # Usage #
 
 ## Setting up the parser
