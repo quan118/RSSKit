@@ -147,6 +147,10 @@ class RSSKitTests: XCTestCase {
                        nil)
     }
     
+    func testDateFromInternetDateTimeString() {
+        XCTAssertEqual(NSDate.dateFromInternetDateTimeString("2016-07-19T01:12+02:00", formatHint: .RFC822), nil)
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock {

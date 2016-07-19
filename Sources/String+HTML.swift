@@ -15,7 +15,7 @@ extension String {
         let tagNameCharacters = NSCharacterSet(charactersInString: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
         
         // Scan and find all tags
-        var result = NSMutableString(capacity: self.utf16.count)
+        let result = NSMutableString(capacity: self.utf16.count)
         let scanner = NSScanner(string: self)
         scanner.charactersToBeSkipped = nil
         scanner.caseSensitive = true

@@ -49,7 +49,6 @@ extension NSDate {
     }
     
     static func dateFromRFC3339String(dateString:String) -> NSDate? {
-        // Keep dateString around a while (for thread-safety)
         var date:NSDate? = nil
         
         let dateFormatter = NSDate.internetDateTimeFormatter()
@@ -59,7 +58,7 @@ extension NSDate {
         // Remove colon in timezone as it breaks NSDateFormatter in iOS 4+
         
         if RFC3339String.characters.count > 20 {
-            let range = Range<String.Index>(RFC3339String.startIndex.advancedBy(20)..<RFC3339String.endIndex.advancedBy(-20))
+            let range = Range<String.Index>(RFC3339String.startIndex.advancedBy(20)..<RFC3339String.endIndex)
             RFC3339String = RFC3339String.stringByReplacingOccurrencesOfString(":",
                                                                                withString: "",
                                                                                options: [],
@@ -86,7 +85,7 @@ extension NSDate {
         var date:NSDate? = nil
         
         let dateFormatter = NSDate.internetDateTimeFormatter()
-        var RFC822String = dateString.uppercaseString
+        let RFC822String = dateString.uppercaseString
         
         if RFC822String.rangeOfString(",") != nil {
             if date == nil { // Sun, 19 May 2002 15:21:36 GMT
