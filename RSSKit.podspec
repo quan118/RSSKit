@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "RSSKit"
-  s.version = "1.0.8"
+  s.version = "1.0.9"
   s.license = {:type => "MIT", :file => "LICENSE"}
   s.summary = "A RSS/Atom Parser in Swift"
   s.homepage = "https://github.com/quan118/RSSKit"
