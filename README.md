@@ -183,4 +183,4 @@ All properties of `RSSFeedInfo` and `RSSFeedItem` return raw data as provided by
 
 # License #
 
-RSSKit is released under the MIT license. See LICENSE for details.
+RSSKit is released under the MIT license. See [LICENSE](https://github.com/quan118/RSSKit/blob/master/LICENSE) for details.
