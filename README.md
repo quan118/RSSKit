@@ -103,7 +103,7 @@ $ git submodule add https://github.com/quan118/RSSKit.git
 Create parser:
 
 	// Create feed parser and pass the URL of the feed
-	let feedURL:NSURL = NSURL(string:"http://images.apple.com/main/rss/hotnews/hotnews.rss")
+	let feedURL:NSURL = NSURL(string:"http://images.apple.com/main/rss/hotnews/hotnews.rss")!
 	let feedParser:FeedParser = RSSFeedParser(feedURL:url)
 
 Set delegate:
