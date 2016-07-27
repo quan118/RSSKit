@@ -1,5 +1,7 @@
 # RSSKit
 [![Build Status](https://travis-ci.org/quan118/RSSKit.svg?branch=master)](https://travis-ci.org/quan118/RSSKit)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Alamofire.svg)](https://img.shields.io/cocoapods/v/Alamofire.svg)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 A Swift library for fetching, parsing and update RSS/Atom feed
 
